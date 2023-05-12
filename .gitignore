@@ -1,0 +1,6 @@
+env/
+__pycache__/
+
+.env
+line_count.sh
+temp.db
