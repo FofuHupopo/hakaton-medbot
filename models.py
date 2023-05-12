@@ -113,9 +113,10 @@ class InstitutionModel(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     
     name = Column(String(127))
-    address = Column(String(215))
     schedule = Column(String(127))
+    
     city = Column(String(63))
+    address = Column(String(215))
 
     lat = Column(Float)
     lon = Column(Float)

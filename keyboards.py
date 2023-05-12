@@ -4,7 +4,9 @@ from aiogram.types import (
 
 
 go_menu_btn = InlineKeyboardButton("◀️ Назад", callback_data="menu")
+go_admin_btn = InlineKeyboardButton("◀️ Назад", callback_data="admin")
 cancel_btn = InlineKeyboardButton("❌ Отмена", callback_data="cancel")
+go_information_btn = InlineKeyboardButton("◀️ Назад", callback_data="information")
 
 
 menu_kb = InlineKeyboardMarkup(row_width=2, resize_keyboard=True)
@@ -62,4 +64,17 @@ information_kb.add(
 )
 
 
-go_information_btn = InlineKeyboardButton("◀️ Назад", callback_data="information")
+admin_kb = InlineKeyboardMarkup(row_width=1, resize_keyboards=True)
+admin_kb.add(
+    InlineKeyboardButton("❔ Вопросы пользователей", callback_data="admin_questions"),
+    InlineKeyboardButton("🔗 Обновить ссылку", callback_data="admin_update_link"),
+    InlineKeyboardButton("🔔 Уведомления", callback_data="admin_notifications")
+)
+
+
+admin_question_kb = InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
+admin_question_kb.add(
+    InlineKeyboardButton("💌 Новые вопросы", callback_data="admin_view_questions"),
+    InlineKeyboardButton("📝 История вопросов", callback_data="admin_answered_questions"),
+    go_admin_btn
+)

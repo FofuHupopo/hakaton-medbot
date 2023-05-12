@@ -51,7 +51,7 @@ def employees_generator():
 
     for _ in range(40):
         employee = EmployeeModel(
-            name=fake.name(),
+            fullname=fake.name(),
             position=fake.job(),
             phone=fake.phone_number(),
             email=fake.email(),
@@ -128,10 +128,10 @@ def institutions_generator():
         ))
     
 
-# diseases_generator()
-# employees_generator()
-# question_symptoms_generator()
-# context_questions_generator()
-# institutions_generator()
+diseases_generator()
+employees_generator()
+question_symptoms_generator()
+context_questions_generator()
+institutions_generator()
 
 session.commit()

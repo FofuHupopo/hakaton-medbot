@@ -19,3 +19,11 @@ class SymptomsQuizState(StatesGroup):
 
 class InstitutionState(StatesGroup):
     message_id = State()
+
+
+class UpdateLinkState(StatesGroup):
+    new_link = State()
+
+
+class AnswerState(StatesGroup):
+    answer = State()
