@@ -12,9 +12,12 @@
 `pip install -r requirements.txt`
 
 После установки зависимостей необходимо указать значение токена для телграм бота и путь к базе данных в переменные виртуальной среды:  
+По умолчанию значение базы данных: `sqlite:///data/temp.db`  
+
 Unix:  
 1. `export BOT_TOKEN="..."`  
 2. `export DB_PATH="..."`  
+
 Windows:  
 1. `SET BOT_TOKEN="..."`  
 2. `SET DB_PATH="..."`  
