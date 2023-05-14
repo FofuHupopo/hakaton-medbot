@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import (
@@ -122,6 +123,15 @@ class InstitutionModel(Base):
     lon = Column(Float)
 
 
-# engine = create_engine("postgresql+pg8000://bot:bot@localhost/tournament")
-engine = create_engine("sqlite:///temp.db")
+DEFAULT_DB_PATH = "sqlite:///data/temp.db"
+DB_PATH = os.environ.get("DB_PATH", DEFAULT_DB_PATH)
+
+if DB_PATH == DEFAULT_DB_PATH:
+    print(
+        "WARNING! Вы используете базу данных по умолчанию. "
+        "Для подключения другой используйте команду 'export DB_PATH=\"...\"' или 'SET DB_PATH=\"...\"'"
+    )
+
+engine = create_engine(DB_PATH)
+
 Base.metadata.create_all(engine)

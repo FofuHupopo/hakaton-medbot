@@ -128,10 +128,15 @@ def institutions_generator():
         ))
     
 
-diseases_generator()
-employees_generator()
-question_symptoms_generator()
-context_questions_generator()
-institutions_generator()
+def main():
+    diseases_generator()
+    employees_generator()
+    question_symptoms_generator()
+    context_questions_generator()
+    institutions_generator()
 
-session.commit()
+    session.commit()
+
+
+if __name__ == "__main__":
+    main()

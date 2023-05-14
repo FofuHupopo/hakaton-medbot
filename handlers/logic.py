@@ -22,7 +22,7 @@ async def notify_administration(message: str):
 
 def get_link_to_appointment() -> str:
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    link_file = os.path.join(root_dir, "link_to_appointment.txt")
+    link_file = os.path.join(root_dir, "data/link_to_appointment.txt")
     
     if not os.path.exists(link_file):
         with open(link_file, "w", encoding="utf-8") as file:
@@ -34,7 +34,7 @@ def get_link_to_appointment() -> str:
 
 def update_link_to_appoinment(new_link: str):
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    link_file = os.path.join(root_dir, "link_to_appointment.txt")
+    link_file = os.path.join(root_dir, "data/link_to_appointment.txt")
     
     with open(link_file, "w", encoding="utf-8") as file:
         file.write(new_link)
